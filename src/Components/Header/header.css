@@ -4,19 +4,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(148, 132, 132); */
-    background-color: rgb(20, 20, 20);
-    /* background-color: transparent; */
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0.85) 100%);
+    backdrop-filter: blur(10px);
     height: 10vh;
     color: white;
-    transition: all 0.5s;
-    transition-timing-function: ease-in;
-    z-index: 1;
-     /* background-color: red; */
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(229, 9, 20, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .nav_black {
-    background-color: rgb(20, 20, 20);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.95) 0%, rgba(20, 20, 20, 0.85) 100%);
 }
 
 .header_container {
@@ -24,7 +23,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: yellow; */
 }
 
 .header_left ul {
@@ -34,7 +32,25 @@
     align-items: center;
     list-style: none;
     cursor: pointer;
-    /* background-color: lightblue; */
+}
+
+.header_left ul li {
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.header_left ul li:not(:first-child):hover {
+    color: #e50914;
+    transform: translateY(-2px);
+}
+
+.header_left ul li:first-child {
+    transition: transform 0.3s ease;
+}
+
+.header_left ul li:first-child:hover {
+    transform: scale(1.05);
 }
 
 .header_right ul {
@@ -44,5 +60,181 @@
     align-items: center;
     list-style: none;
     cursor: pointer;
-    /* background-color: lightgreen; */
+}
+
+.header_right ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.header_right ul li:hover {
+    background-color: rgba(229, 9, 20, 0.3);
+    color: #e50914;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+}
+
+.nav-link:hover {
+    color: #e50914;
+}
+
+.nav-link.active {
+    color: #e50914;
+    font-weight: 700;
+}
+
+.nav-link.disabled {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* Mobile Responsive Header */
+@media (max-width: 1024px) {
+    .header_container {
+        width: 95%;
+    }
+
+    .header_left ul {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .header_left ul li {
+        font-size: 0.85rem;
+    }
+
+    .header_left ul li img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header_outer_container {
+        height: 8vh;
+    }
+
+    .header_container {
+        width: 98%;
+    }
+
+    .header_left ul {
+        gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .header_left ul li {
+        font-size: 0.75rem;
+    }
+
+    .header_left ul li img {
+        width: 70px;
+    }
+
+    .header_left ul li:nth-child(n+4) {
+        display: none;
+    }
+
+    .header_right ul {
+        gap: 8px;
+        width: 100%;
+    }
+
+    .header_right ul li {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header_outer_container {
+        height: 7vh;
+        padding: 0 10px;
+    }
+
+    .header_container {
+        width: 100%;
+    }
+
+    .header_left ul {
+        gap: 8px;
+        justify-content: flex-start;
+    }
+
+    .header_left ul li {
+        font-size: 0.65rem;
+    }
+
+    .header_left ul li img {
+        width: 60px;
+    }
+
+    .header_left ul li:nth-child(2) {
+        display: none;
+    }
+
+    .header_right ul {
+        gap: 6px;
+        width: auto;
+        min-width: 130px;
+    }
+
+    .header_right ul li {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .header_outer_container {
+        height: 7vh;
+        padding: 0 8px;
+    }
+
+    .header_container {
+        width: 100%;
+    }
+
+    .header_left ul {
+        gap: 6px;
+        justify-content: flex-start;
+    }
+
+    .header_left ul li {
+        font-size: 0.6rem;
+    }
+
+    .header_left ul li img {
+        width: 50px;
+    }
+
+    .header_left ul li:nth-child(2) {
+        display: none;
+    }
+
+    .header_right ul {
+        gap: 4px;
+        width: auto;
+        min-width: 110px;
+    }
+
+    .header_right ul li {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
 }

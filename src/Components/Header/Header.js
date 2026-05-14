@@ -1,5 +1,6 @@
 import React from "react";
-import header from "./header.css"
+import { NavLink } from 'react-router-dom';
+import "./header.css";
 import NetflixLogo from "../../Assets/images/Netflixlogo.png";
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -24,13 +25,14 @@ function Header() {
                  src={NetflixLogo}
                 alt="Netflix Logo"
                  width="100"
-              /></li>
-            <li>Home</li>
-            <li>TV Shows</li>
-            <li>Movies</li>
-            <li>Latest</li>
-            <li>My List</li>
-            <li>Browse by Languages</li>
+              />
+            </li>
+            <li><NavLink to="/" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink></li>
+            <li><NavLink to="/category/tvshows" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>TV Shows</NavLink></li>
+            <li><NavLink to="/category/movies" className={({isActive}) => isActive ? 'nav-link active' : 'nav-link'}>Movies</NavLink></li>
+            <li><span className="nav-link disabled">Latest</span></li>
+            <li><span className="nav-link disabled">My List</span></li>
+            <li><span className="nav-link disabled">Browse by Languages</span></li>
           </ul>
         </div>
 

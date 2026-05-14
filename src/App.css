@@ -1,4 +1,33 @@
 
-/* .App { 
-  background-color: black;
-}; */
+.App {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(229, 9, 20, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(229, 9, 20, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .App {
+    background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+  }
+
+  .App::before {
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(229, 9, 20, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(229, 9, 20, 0.02) 0%, transparent 50%);
+  }
+}
