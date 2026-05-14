@@ -1,6 +1,7 @@
 {
   "name": "netflix-clone",
   "version": "0.1.0",
+  "homepage": "https://hhxjjd.github.io/Netflix-Clone-2024",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
